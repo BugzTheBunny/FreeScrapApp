@@ -1,0 +1,35 @@
+<style>
+    .scroll {
+    max-height: 200px;
+    overflow-y: auto;
+}
+    .scroll2 {
+    max-height: 800px;
+    overflow-y: auto;
+}
+</style>
+<div class="container text-center" dir="rtl">
+    <!-- Form -->
+    <form class="container form-line text-center" method="post">
+        <div class="mb-4">
+            <label for="query_to_search" class="form-label text-center"></label>
+            <input type="text" class="form-control text-center" id="query_to_search" name="query_to_search"
+                   placeholder="MPLOY Jobs Search">
+            <button type="submit" class="btn btn-primary btn-lg btn-block">Submit</button>
+        </div>
+    </form>
+    <div class="container row text-center border border-primary rounded scroll2">
+        {% for record in data %}
+        <div class="card " style="width: 19rem;">
+            <div class="card-body">
+                <h5 class="alert alert-dark card-title"><a href="{{ record.url }}">{{ record.title }}</a></h5>
+                <h6 class="text-white bg-dark card-subtitle mb-2">{{ record.date }}</h6>
+                <h6 class="text-white bg-dark card-subtitle mb-2">{{ record.location }}</h6>
+                <p class="card-text scroll alert alert-success">{{ record.description }}</p>
+
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+

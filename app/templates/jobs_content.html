@@ -1,0 +1,45 @@
+<style>
+    .scroll {
+    max-height: 200px;
+    overflow-y: auto;
+}
+    .scroll2 {
+    max-height: 735px;
+    overflow-y: auto;
+}
+    .container2 {
+    max-width: auto;
+    overflow-y: auto;
+}
+</style>
+<div class="container text-center" dir="rtl">
+    <!-- Form -->
+    <form class="container form-line text-center" method="post">
+        <div class="mb-4">
+            <label for="query_to_search" class="form-label text-center"></label>
+            <input type="text" class="form-control text-center" id="query_to_search" name="query_to_search"
+                   placeholder="𝙄𝙣𝙥𝙪𝙩 𝙮𝙤𝙪𝙧 𝙙𝙚𝙨𝙞𝙧𝙚𝙙 𝙟𝙤𝙗 𝙨𝙥𝙝𝙚𝙧𝙚 𝙥𝙡𝙚𝙖𝙨𝙚">
+            <button type="submit" class="btn btn-primary btn-lg btn-block">Get the list of jobs</button>
+        </div>
+    </form>
+    <div class="container2 row text-center border border-primary rounded scroll2">
+        {% for record in data %}
+        <div class="card " style="width: 20rem;">
+            <div class="card-body">
+                <h5 class="alert alert-dark card-title"><a href="{{ record.url }}">{{ record.title }}</a></h5>
+                {% if record.company %}
+                <h6 class="text-white bg-dark card-subtitle mb-2">{{ record.company }}</h6>
+                {% endif %}
+                {% if record.date %}
+                <h6 class="text-white bg-dark card-subtitle mb-2">{{ record.date }}</h6>
+                {% endif %}
+                <h6 class="text-white bg-dark card-subtitle mb-2">{{ record.location }}</h6>
+                {% if record.description %}
+                <p class="card-text scroll alert alert-success">{{ record.description }}</p>
+                {% endif %}
+
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>

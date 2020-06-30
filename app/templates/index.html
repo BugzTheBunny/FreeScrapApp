@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="he">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css"
+          integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous">
+    <title>FreeScrap</title>
+    <style>
+    body {background-color: rgb(245, 255, 255);}
+
+    </style>
+</head>
+<header>
+    <nav class="navbar navbar-dark bg-primary">
+        <div class="btn-group">
+            <a href="/" class="btn btn-warning btn-lg btn-outline-dark" role="button" aria-pressed="true">(っ◔◡◔)っ 𝙁𝙧𝙚𝙚𝙎𝙘𝙧𝙖𝙥 𝙃𝙤𝙢𝙚</a>
+            <a href="/linkedin" class="btn btn-primary btn-lg btn-outline-dark" role="button" aria-pressed="true" data-toggle="tooltip" title="Linkedin Jobs Search tool">𝙇𝙞𝙣𝙠𝙚𝙙𝙄𝙣 𝙅𝙤𝙗𝙨</a>
+            <a href="/mploy" class="btn btn-primary btn-lg btn-outline-dark" role="button" aria-pressed="true" data-toggle="tooltip" title="MPloy Jobs Search tool">𝙈𝙋𝙡𝙤𝙮 𝙅𝙤𝙗𝙨</a>
+            <a href="/ness" class="btn btn-primary btn-lg btn-outline-dark" role="button" aria-pressed="true" data-toggle="tooltip" title="MPloy Jobs Search tool">𝙉𝙚𝙨𝙨 𝙅𝙤𝙗𝙨</a>
+            <a href="/" class="btn btn-primary btn-lg btn-outline-dark" role="button" aria-pressed="true" data-toggle="tooltip" title="Udemy Courses Search tool">𝙐𝙙𝙚𝙢𝙮 𝘾𝙤𝙪𝙧𝙨𝙚𝙨</a>
+            <a href="/" class="btn btn-primary btn-lg btn-outline-dark" role="button" aria-pressed="true" data-toggle="tooltip" title="Campus Courses Search tool">𝘾𝙖𝙢𝙥𝙪𝙨 𝘾𝙤𝙪𝙧𝙨𝙚𝙨</a>
+        </div>
+        <button type="button" class="btn btn-warning btn-lg">Create A PDF Resume!</button>
+    </nav>
+
+</header>
+<body>
+{{ content | safe }}
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js"
+        integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/"
+        crossorigin="anonymous"></script>
+</body>
+</html>
