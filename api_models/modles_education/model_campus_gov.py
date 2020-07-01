@@ -1,6 +1,6 @@
 import requests
 from bs4 import BeautifulSoup
-from app.api_models.api_properties import headers
+from api_models.api_properties import headers
 
 
 def get_campus_courses(query):
