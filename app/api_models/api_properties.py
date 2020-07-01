@@ -1,8 +1,6 @@
 # UDEMY SETTINGS:
 AUTH_TOKEN = ''#SUPER MEGA SECRET
 
-udemy_data_size = 50  # Amount of how much courses will be retrieved.
-
 headers = {
     "Accept": "application/json, text/plain, */*",
     "Content-Type": "application/json;charset=utf-8",

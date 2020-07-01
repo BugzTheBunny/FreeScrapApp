@@ -8,6 +8,7 @@ def get_campus_courses(query):
     link = ''
     duration = ''
     description = ''
+    image = ''
     courses_list = []
     try:
         response = requests.get(f'https://campus.gov.il/?s={query}', headers=headers)
@@ -15,7 +16,7 @@ def get_campus_courses(query):
         data = BeautifulSoup(response, 'lxml')
         courses = data.find_all('div', class_='more-courses-item-inner course-item-courses')
         for c in courses:
-
+            image = c.find('a')['style'].replace('background-image: url(','').replace(');','')
             # Databox:
             details = c.find('a', class_='course-details-more-courses course-details link-more-courses')
             # >> Title
@@ -42,7 +43,9 @@ def get_campus_courses(query):
             # Building class.
             courses_list.append({
                 'title': title,
-                'link': link,
+                'url': link,
+                'duration':duration,
+                'image': image,
                 'description': description
             })
     except:

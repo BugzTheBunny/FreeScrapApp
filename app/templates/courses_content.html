@@ -31,26 +31,24 @@
     <form class="container form-line text-center" method="post">
         <div class="mb-4">
             <label for="query_to_search" class="form-label text-center"><h2><span
-                    class="badge bg-primary btn-outline-dark">!Latest {{ title }} Jobs</span></h2></label>
+                    class="badge bg-primary btn-outline-dark">!Latest {{ title }} Courses</span></h2></label>
             <input type="text" class="form-control text-center" id="query_to_search" name="query_to_search"
-                   placeholder="𝙄𝙣𝙥𝙪𝙩 𝙮𝙤𝙪𝙧 𝙙𝙚𝙨𝙞𝙧𝙚𝙙 𝙟𝙤𝙗 𝙨𝙥𝙝𝙚𝙧𝙚 𝙥𝙡𝙚𝙖𝙨𝙚">
-            <button type="submit" class="btn btn-primary btn-lg btn-block">Get the list of jobs</button>
+                   placeholder="𝙄𝙣𝙥𝙪𝙩 𝙮𝙤𝙪𝙧 𝙙𝙚𝙨𝙞𝙧𝙚𝙙 𝙨𝙩𝙪𝙙𝙮 𝙨𝙪𝙗𝙟𝙚𝙘𝙩">
+            <button type="submit" class="btn btn-primary btn-lg btn-block">Get the list of courses</button>
         </div>
     </form>
     <div class="container2 row text-center scroll2">
         {% for record in data %}
         <div class="card" style="width: 20rem;">
             <div class="card-body">
+                <img src="{{ record.image }}" class="img-thumbnail border border-dark rounded">
                 <h5 class="alert alert-dark card-title"><a href="{{ record.url }}">{{ record.title }}</a></h5>
-                {% if record.company %}
-                <h6 class="text-white bg-dark card-subtitle mb-2 border border-dark rounded">{{ record.company }}</h6>
-                {% endif %}
-                {% if record.date %}
-                <h6 class="text-white bg-dark card-subtitle mb-2 border border-dark rounded">{{ record.date }}</h6>
-                {% endif %}
-                <h6 class="text-white bg-dark card-subtitle mb-2 border border-dark rounded">{{ record.location }}</h6>
                 {% if record.description %}
-                <p class="card-text scroll alert alert-success">{{ record.description }}</p>
+                <h6 class="text-white bg-dark card-subtitle mb-2  border border-dark rounded">{{ record.description
+                    }}</h6>
+                {% endif %}
+                {% if record.duration %}
+                <h6 class="text-white bg-dark card-subtitle mb-2  border border-dark rounded">{{ record.duration }}</h6>
                 {% endif %}
             </div>
         </div>
