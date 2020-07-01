@@ -109,4 +109,6 @@ def test():
         return render_template("index.html",
                                content=render_template('test_content.html', data=model_mploy.get_mploy_jobs('', 50)),
                                title='HOME')
-app.run(debug=True)
+
+
+app.run(debug=False)
