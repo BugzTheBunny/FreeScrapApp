@@ -1,6 +1,16 @@
 import json
 import requests
 
+headers = {
+    "Accept": "application/json, text/plain, */*",
+    "Content-Type": "application/json;charset=utf-8",
+    'pragma': 'no-cache',
+    'referer': 'https',
+    'sec-fetch-mode': 'no-cors',
+    'sec-fetch-site': 'cross-site',
+    'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) '
+                  'Chrome/74.0.3729.169 Safari/537.36',
+}
 
 def format_job(opportunity):
     return {'title': opportunity['title'],
@@ -21,7 +31,7 @@ def get_mploy_jobs(keyword, limit):
         call = requests.get(
             f'https://www.mploy.co.il/jobs?distance=1000&orderby=updatedAt&direction=DESC&'
             f'start={page}&type=LOCATION&'
-            f'keyword={keyword}')
+            f'keyword={keyword}', headers=headers)
         json_response = json.loads(call.content)
         if len(json_response['jobs']) == 0 or page > limit:
             return jobs_list
