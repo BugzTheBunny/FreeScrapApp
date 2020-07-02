@@ -4,7 +4,7 @@
     overflow-y: auto;
 }
     .scroll2 {
-    max-height: 735px;
+    max-height: 800px;
     overflow-y: auto;
 }
     .container2 {
@@ -26,32 +26,28 @@
 .card{background-color: rgb(100, 100, 100);}
 
 </style>
-<div class="container text-center" dir="rtl">
-    <!-- Form -->
-    <form class="container form-line text-center" method="post">
-        <div class="mb-4">
-            <label for="query_to_search" class="form-label text-center"><h2><span
-                    class="badge bg-primary btn-outline-dark">!Latest {{ title }} Courses</span></h2></label>
-            <input type="text" class="form-control text-center" id="query_to_search" name="query_to_search"
-                   placeholder="𝙄𝙣𝙥𝙪𝙩 𝙮𝙤𝙪𝙧 𝙙𝙚𝙨𝙞𝙧𝙚𝙙 𝙨𝙩𝙪𝙙𝙮 𝙨𝙪𝙗𝙟𝙚𝙘𝙩">
-            <button type="submit" class="btn btn-primary btn-lg btn-block">Get the list of courses</button>
-        </div>
-    </form>
-    <div class="container2 row text-center scroll2">
+<div class="container text-center">
+    <div class="container2 row text-center scroll2 mb-3">
         {% for record in data %}
-        <div class="card" style="width: 20rem;">
-            <div class="card-body">
-                <img src="{{ record.image }}" class="img-thumbnail border border-dark rounded">
-                <h5 class="alert alert-dark card-title"><a href="{{ record.url }}">{{ record.title }}</a></h5>
+        <a href="{{ record.url }}" class="card mr-5 mb-2" style="width: 20rem;">
+            <div class="card-body bg-dark">
+
+                <img src="{{ record.image }}" class="img-thumbnail border border-dark rounded mb-1">
+
+                <h5 class="btn btn-outline-light card-title mb-3 font-weight-bold">{{ record.title }}</h5>
                 {% if record.description %}
                 <h6 class="text-white bg-dark card-subtitle mb-2  border border-dark rounded">{{ record.description
                     }}</h6>
                 {% endif %}
                 {% if record.duration %}
-                <h6 class="text-white bg-dark card-subtitle mb-2  border border-dark rounded">{{ record.duration }}</h6>
+                <h6 class="text-white bg-dark card-subtitle mb-2  border border-dark rounded">{{ record.duration
+                    }}</h6>
                 {% endif %}
+                <h3>
+                    <div class="badge badge-pill badge-success fixed-bottom">חינם</div>
+                </h3>
             </div>
-        </div>
+        </a>
         {% endfor %}
     </div>
 </div>

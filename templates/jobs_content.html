@@ -4,8 +4,8 @@
     overflow-y: auto;
 }
     .scroll2 {
-    max-height: 735px;
-    overflow-y: auto;
+    max-height: 750px;
+    overflow-y: 50px;
 }
     .container2 {
     max-width: auto;
@@ -50,7 +50,7 @@
                 {% endif %}
                 <h6 class="text-white bg-dark card-subtitle mb-2 border border-dark rounded">{{ record.location }}</h6>
                 {% if record.description %}
-                <p class="card-text scroll alert alert-success">{{ record.description }}</p>
+                <p class="card-text scroll alert alert-success ">{{ record.description }}</p>
                 {% endif %}
             </div>
         </div>

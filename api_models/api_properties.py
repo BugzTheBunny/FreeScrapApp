@@ -1,6 +1,3 @@
-# UDEMY SETTINGS:
-AUTH_TOKEN = ''#SUPER MEGA SECRET
-
 headers = {
     "Accept": "application/json, text/plain, */*",
     "Content-Type": "application/json;charset=utf-8",

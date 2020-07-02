@@ -8,18 +8,48 @@ from api_models.modles_education import model_udemy, model_campus_gov
 app = Flask(__name__)
 
 
+def get_courses(query):
+    full_course_list_to_return = []
+    udemy_courses = model_udemy.get_udemy_courses(query)
+    for course in udemy_courses:
+        full_course_list_to_return.append(course)
+    return full_course_list_to_return
+
+
+def get_jobs(query):
+    return f'{query} THIS'
+
+
 @app.route('/', methods=['GET', 'POST'])
 def index():
+    content = render_template('home.html')
+    header = render_template('header.html')
+    footer = render_template('footer.html')
     if request.method == 'GET':
-        return render_template("index.html", content=render_template('home.html'), title='HOME')
+        return render_template("index.html", content=content, header=header,
+                               footer=footer)
     else:
-        return render_template("index.html", data='POTATO', title='BIG POTATO')
+        query = request.form['search_query']
+        if query != '':
+            if request.form['option'] == 'course':
+                return render_template('index.html',
+                                       header=header,
+                                       footer=footer,
+                                       content=render_template('courses_content.html', data=get_courses(query)))
+            elif request.form['option'] == 'job':
+                return render_template('index.html',
+                                       header=header,
+                                       footer=footer,
+                                       content=render_template('jobs_content.html', data=get_jobs(query)))
+        else:
+            print('EMPTY STRING')
+        return render_template("index.html", data='POTATO', title='BIG POTATO', header=render_template('header.html'))
 
 
 @app.route('/linkedin', methods=['GET', 'POST'])
 def linkedin():
-    title = 'Linked'
-    if request.method == 'POST':
+    title = 'LinkedIn'
+    if request.method == ['GET']:
         return render_template(
             "index.html",
             content=render_template('jobs_content.html',
@@ -93,8 +123,22 @@ def udemy():
     else:
         return render_template(
             "index.html",
+            header=render_template('header.html'),
             content=render_template('courses_content.html',
                                     data=model_udemy.get_udemy_courses(''), title=title))
+
+
+@app.route('/about', methods=['GET', 'POST'])
+def about_page():
+    if request.method == 'POST' or request.method == 'GET':
+        return render_template(
+            "index.html",
+            header=render_template('header.html'),
+            content=render_template('about.html'))
+    else:
+        return render_template("index.html",
+                               content=render_template('test_content.html', data=model_mploy.get_mploy_jobs('', 50)),
+                               title='HOME')
 
 
 @app.route('/test', methods=['GET', 'POST'])
@@ -112,4 +156,4 @@ def test():
 
 
 if __name__ == '__main__':
-    app.run(debug=False)
+    app.run(debug=True)
