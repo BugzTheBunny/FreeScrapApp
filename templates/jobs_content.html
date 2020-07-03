@@ -1,16 +1,15 @@
 <style>
-    .scroll {
-    max-height: 200px;
+.scroll {
+    max-height: 850px;
     overflow-y: auto;
 }
-    .scroll2 {
-    max-height: 750px;
-    overflow-y: 50px;
+.top-left {
+  opacity: 0.9;
+  position: absolute;
+  top: 5px;
+  left: 10px;
 }
-    .container2 {
-    max-width: auto;
-    overflow-y: auto;
-}
+
 .scroll {
     overflow: scroll;
     overflow-x: hidden;
@@ -23,37 +22,68 @@
 ::-webkit-scrollbar-thumb {
     background: #FF0000;
 }
-.card{background-color: rgb(100, 100, 100);}
+
+
+
+
 
 </style>
-<div class="container text-center" dir="rtl">
-    <!-- Form -->
-    <form class="container form-line text-center" method="post">
-        <div class="mb-4">
-            <label for="query_to_search" class="form-label text-center"><h2><span
-                    class="badge bg-primary btn-outline-dark">!Latest {{ title }} Jobs</span></h2></label>
-            <input type="text" class="form-control text-center" id="query_to_search" name="query_to_search"
-                   placeholder="𝙄𝙣𝙥𝙪𝙩 𝙮𝙤𝙪𝙧 𝙙𝙚𝙨𝙞𝙧𝙚𝙙 𝙟𝙤𝙗 𝙨𝙥𝙝𝙚𝙧𝙚 𝙥𝙡𝙚𝙖𝙨𝙚">
-            <button type="submit" class="btn btn-primary btn-lg btn-block">Get the list of jobs</button>
-        </div>
-    </form>
-    <div class="container2 row text-center scroll2">
-        {% for record in data %}
-        <div class="card" style="width: 20rem;">
-            <div class="card-body">
-                <h5 class="alert alert-dark card-title"><a href="{{ record.url }}">{{ record.title }}</a></h5>
-                {% if record.company %}
-                <h6 class="text-white bg-dark card-subtitle mb-2 border border-dark rounded">{{ record.company }}</h6>
-                {% endif %}
-                {% if record.date %}
-                <h6 class="text-white bg-dark card-subtitle mb-2 border border-dark rounded">{{ record.date }}</h6>
-                {% endif %}
-                <h6 class="text-white bg-dark card-subtitle mb-2 border border-dark rounded">{{ record.location }}</h6>
-                {% if record.description %}
-                <p class="card-text scroll alert alert-success ">{{ record.description }}</p>
-                {% endif %}
+<div class="container scroll">
+    {% for record in data %}
+    <!--LinkedIn-->
+    {% if record.source == 'LinkedIn' %}
+    <div class="shadow-sm p-3 rounded text-center">
+        <a href="{{ record.url }}" class="list-group-item list-group-item-action flex-column align-items-start">
+            <h4><span class="turn top-left badge badge-info border border-light rounded">{{ record.source }}</span>
+            </h4>
+            <h5 class="mb-1 text-center">{{ record.title }}</h5>
+            <small class="text-muted badge-light border border-light rounded">{{ record.date }} || {{ record.location
+                }}</small>
+            {% if record.description %}
+            <hr class="my-40 bg-secondary">
+            <div class="container rounded">
+                <p class="mb-1">{{ record.description }}</p>
             </div>
-        </div>
-        {% endfor %}
+            {% endif %}
+        </a>
     </div>
+    {% endif%}
+    <!--MPLOY-->
+    {% if record.source == 'MPloy' %}
+    <div class="shadow-sm p-3 rounded text-center">
+        <a href="{{ record.url }}" class="list-group-item list-group-item-action flex-column align-items-start">
+            <h4><span class="turn top-left badge badge-success border border-light rounded">{{ record.source }}</span>
+            </h4>
+            <h5 class="mb-1 text-center">{{ record.title }}</h5>
+            <small class="text-muted badge-light border border-light rounded">{{ record.date }} || {{ record.location
+                }}</small>
+            {% if record.description %}
+            <hr class="my-40 bg-secondary">
+            <div class="container rounded">
+                <p class="mb-1">{{ record.description }}</p>
+            </div>
+            {% endif %}
+        </a>
+    </div>
+    {% endif%}
+    <!--Ness-->
+    {% if record.source == 'Ness' %}
+    <div class="shadow-sm p-3 rounded text-center">
+        <a href="{{ record.url }}" class="list-group-item list-group-item-action flex-column align-items-start">
+            <h4><span class="turn top-left badge badge-primary border border-light rounded">{{ record.source }}</span>
+            </h4>
+            <h5 class="mb-1 text-center">{{ record.title }}</h5>
+            <small class="text-muted badge-light border border-light rounded">{{ record.date }} || {{ record.location
+                }}</small>
+            {% if record.description %}
+            <hr class="my-40 bg-secondary">
+            <div class="container rounded">
+                <p class="mb-1">{{ record.description }}</p>
+            </div>
+            {% endif %}
+        </a>
+    </div>
+    {% endif%}
+    {% endfor %}
 </div>
+

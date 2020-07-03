@@ -1,35 +1,12 @@
-<style>
-    .scroll {
-    max-height: 200px;
-    overflow-y: auto;
-}
-    .scroll2 {
-    max-height: 800px;
-    overflow-y: auto;
-}
-</style>
-<div class="container text-center" dir="rtl">
-    <!-- Form -->
-    <form class="container form-line text-center" method="post">
-        <div class="mb-4">
-            <label for="query_to_search" class="form-label text-center"></label>
-            <input type="text" class="form-control text-center" id="query_to_search" name="query_to_search"
-                   placeholder="MPLOY Jobs Search">
-            <button type="submit" class="btn btn-primary btn-lg btn-block">Submit</button>
-        </div>
-    </form>
-    <div class="container row text-center border border-primary rounded scroll2">
-        {% for record in data %}
-        <div class="card " style="width: 19rem;">
-            <div class="card-body">
-                <h5 class="alert alert-dark card-title"><a href="{{ record.url }}">{{ record.title }}</a></h5>
-                <h6 class="text-white bg-dark card-subtitle mb-2">{{ record.date }}</h6>
-                <h6 class="text-white bg-dark card-subtitle mb-2">{{ record.location }}</h6>
-                <p class="card-text scroll alert alert-success">{{ record.description }}</p>
-
+<div class="container">
+        <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
+            <div class="d-flex w-100 justify-content-between">
+                <h5 class="mb-1">List group item heading</h5>
+                <small class="text-muted">3 days ago</small>
             </div>
-        </div>
-        {% endfor %}
+            <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius
+                blandit.</p>
+            <small class="text-muted">Donec id elit non mi porta.</small>
+        </a>
     </div>
 </div>
-

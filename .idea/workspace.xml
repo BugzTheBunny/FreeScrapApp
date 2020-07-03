@@ -19,35 +19,19 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cfe9bafe-5547-43e2-ba53-1e706f679e3b" name="Default Changelist" comment="Commit">
-      <change afterPath="$PROJECT_DIR$/static/css/all.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/style.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/webfonts/fa-brands-400.eot" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/webfonts/fa-brands-400.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/webfonts/fa-brands-400.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/webfonts/fa-brands-400.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/webfonts/fa-brands-400.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/webfonts/fa-regular-400.eot" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/webfonts/fa-regular-400.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/webfonts/fa-regular-400.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/webfonts/fa-regular-400.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/webfonts/fa-regular-400.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/webfonts/fa-solid-900.eot" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/webfonts/fa-solid-900.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/webfonts/fa-solid-900.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/webfonts/fa-solid-900.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/webfonts/fa-solid-900.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/about.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/footer.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/header.html" afterDir="false" />
+    <list default="true" id="cfe9bafe-5547-43e2-ba53-1e706f679e3b" name="Default Changelist" comment="Commitgit s">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api_models/api_properties.py" beforeDir="false" afterPath="$PROJECT_DIR$/api_models/api_properties.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api_models/models_jobs/model_linkedin.py" beforeDir="false" afterPath="$PROJECT_DIR$/api_models/models_jobs/model_linkedin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api_models/models_jobs/model_mploy.py" beforeDir="false" afterPath="$PROJECT_DIR$/api_models/models_jobs/model_mploy.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api_models/models_jobs/model_ness.py" beforeDir="false" afterPath="$PROJECT_DIR$/api_models/models_jobs/model_ness.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api_models/modles_education/model_campus_gov.py" beforeDir="false" afterPath="$PROJECT_DIR$/api_models/modles_education/model_campus_gov.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api_models/modles_education/model_udemy.py" beforeDir="false" afterPath="$PROJECT_DIR$/api_models/modles_education/model_udemy.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/process_data.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/courses_content.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/courses_content.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/home.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/footer.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/footer.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/header.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/header.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/jobs_content.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/jobs_content.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/test_content.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/test_content.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -205,7 +189,14 @@
       <option name="project" value="LOCAL" />
       <updated>1593594734038</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Commit">
+      <created>1593714178378</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1593714178378</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -253,10 +244,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1882" height="282" key="GridCell.Tab.0.right/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1593698406155" />
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1593594740362">
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1593714190370">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1593594740362" />
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1593714190370" />
     <state x="2084" y="37" width="1422" height="655" key="dock-window-1" timestamp="1593703537535">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>

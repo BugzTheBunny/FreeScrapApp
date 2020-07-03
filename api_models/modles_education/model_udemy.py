@@ -15,7 +15,7 @@ def request_udemy_api(query):
     try:
         return requests.get(
             f'https://www.udemy.com/api-2.0/courses/?page_size={100}&search={query}'
-            f'&price=price-free&language=en&ratings=4.5', headers=headers).json()['results']
+            f'&price=price-free&language=en&ratings=4', headers=headers).json()['results']
     except:
         return False
 
@@ -27,7 +27,8 @@ def clean_data(data):
             'title': str(each['title']),
             "url": f"https://www.udemy.com{each['url']}",
             'description': each['headline'],
-            'image': each['image_480x270']
+            'image': each['image_480x270'],
+            'source': 'Udemy'
         })
     return clean_data
 

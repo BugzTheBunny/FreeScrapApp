@@ -4,12 +4,21 @@
     overflow-y: auto;
 }
     .scroll2 {
-    max-height: 800px;
+    max-height: 850px;
     overflow-y: auto;
 }
-    .container2 {
+.container {
+  position: relative;
+  text-align: center;
+  color: white;
+}
+
+.container2 {
     max-width: auto;
     overflow-y: auto;
+    position: relative;
+    text-align: center;
+    color: white;
 }
 .scroll {
     overflow: scroll;
@@ -25,27 +34,56 @@
 }
 .card{background-color: rgb(100, 100, 100);}
 
+.top-left {
+  opacity: 0.9;
+  position: absolute;
+  top: 15px;
+  left: 40px;
+}
+
+.bottom-right {
+  opacity: 0.7;
+  position: absolute;
+  top: 152px;
+  right: 10px;
+}
+
+
+.turn {
+  width: 90px;
+  height: 32px;
+  transform: rotate(0deg);
+}
 </style>
 <div class="container text-center">
-    <div class="container2 row text-center scroll2 mb-3">
+    <div class="container2 row text-center scroll2 mb-3 ">
         {% for record in data %}
         <a href="{{ record.url }}" class="card mr-5 mb-2" style="width: 20rem;">
             <div class="card-body bg-dark">
-
-                <img src="{{ record.image }}" class="img-thumbnail border border-dark rounded mb-1">
-
-                <h5 class="btn btn-outline-light card-title mb-3 font-weight-bold">{{ record.title }}</h5>
-                {% if record.description %}
-                <h6 class="text-white bg-dark card-subtitle mb-2  border border-dark rounded">{{ record.description
-                    }}</h6>
-                {% endif %}
-                {% if record.duration %}
-                <h6 class="text-white bg-dark card-subtitle mb-2  border border-dark rounded">{{ record.duration
-                    }}</h6>
-                {% endif %}
-                <h3>
-                    <div class="badge badge-pill badge-success fixed-bottom">חינם</div>
+                <!--Image-->
+                <img src="{{ record.image }}" class="img-thumbnail rounded">
+                <!--Source-->
+                <h3><span class="turn top-left badge badge-dark border border-dark rounded">{{ record.source }}</span>
                 </h3>
+                <h3><span class="turn bottom-right badge badge-dark border border-dark rounded">!חינם</span></h3>
+                <div class="btn btn-outline-secondary ">
+                    <!--Title-->
+                    <h5 class="card-title mb-3 font-weight-bold">{{ record.title }}</h5>
+                    <hr class="my-20 bg-secondary">
+                    <!--Description-->
+                    {% if record.description %}
+                    <h6 class="text-white bg-dark card-subtitle  border border-dark rounded">{{ record.description
+                        }}</h6>
+                    {% endif %}
+
+                    <!--Duration-->
+                    {% if record.duration %}
+                    <hr class="my-20 bg-secondary">
+                    <h6 class="text-white bg-dark card-subtitle border border-dark rounded">{{ record.duration
+                        }}</h6>
+                    {% endif %}
+                </div>
+
             </div>
         </a>
         {% endfor %}

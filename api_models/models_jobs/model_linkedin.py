@@ -19,7 +19,7 @@ def format_job(opportunity):
     try:
         date = opportunity.find(class_='job-result-card__listdate--new').text
     except:
-        date = 'Not a long ago..'
+        date = 'פורסם לא מזמן'
 
     return {
         'title': title,
@@ -28,7 +28,7 @@ def format_job(opportunity):
         'date': date,
         'location': location,
         'description': None,
-        'source': 'www.linkedin.com'
+        'source': 'LinkedIn'
     }
 
 

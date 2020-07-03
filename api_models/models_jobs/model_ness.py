@@ -8,7 +8,7 @@ def format_job(opportunity):
             'date': f'Job ID : {opportunity["Index"]}',
             'description': None,
             'location': opportunity['PosLocation'],
-            'source': 'www.ness-tech.co.il/'
+            'source': 'Ness'
             }
 
 

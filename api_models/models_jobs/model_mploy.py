@@ -19,7 +19,7 @@ def format_job(opportunity):
             'date': opportunity['updated_at'][0:10],
             'description': opportunity['description'],
             'location': opportunity['formatted_address'],
-            'source': 'www.mploy.co.il'
+            'source': 'MPloy'
             }
 
 

@@ -16,7 +16,7 @@ def get_campus_courses(query):
         data = BeautifulSoup(response, 'lxml')
         courses = data.find_all('div', class_='more-courses-item-inner course-item-courses')
         for c in courses:
-            image = c.find('a')['style'].replace('background-image: url(','').replace(');','')
+            image = c.find('a')['style'].replace('background-image: url(', '').replace(');', '')
             # Databox:
             details = c.find('a', class_='course-details-more-courses course-details link-more-courses')
             # >> Title
@@ -44,11 +44,14 @@ def get_campus_courses(query):
             courses_list.append({
                 'title': title,
                 'url': link,
-                'duration':duration,
+                'duration': duration,
                 'image': image,
-                'description': description
+                'description': description,
+                'source': 'קמפוס'
             })
     except:
         return False
-
-    return courses_list
+    if len(courses_list) > 40:
+        return False
+    else:
+        return courses_list
